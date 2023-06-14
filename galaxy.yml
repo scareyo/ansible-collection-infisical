@@ -1,0 +1,32 @@
+---
+namespace: scareyo
+name: infisical
+version: 1.0.0
+readme: README.md
+
+authors:
+  - Sam Carey <sam@scarey.me>
+
+description: A collection for Infisical lookups
+
+license:
+  - MIT
+
+license_file: 'LICENSE'
+
+tags:
+  - infisical
+  - lookup
+
+dependencies: {}
+
+repository: https://github.com/scareyo/ansible-collection-infisical
+documentation: https://github.com/scareyo/ansible-collection-infisical
+homepage: https://github.com/scareyo/ansible-collection-infisical
+issues: https://github.com/scareyo/ansible-collection-infisical/issues
+
+# A list of file glob-like patterns used to filter any files or directories that should not be included in the build
+# artifact. A pattern is matched from the relative path of the file or directory of the collection directory. This
+# uses 'fnmatch' to match the files or directories. Some directories and files like 'galaxy.yml', '*.pyc', '*.retry',
+# and '.git' are always filtered. Mutually exclusive with 'manifest'
+build_ignore: []
