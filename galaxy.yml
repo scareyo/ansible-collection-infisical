@@ -9,9 +9,6 @@ authors:
 
 description: A collection for Infisical lookups
 
-license:
-  - MIT
-
 license_file: 'LICENSE'
 
 tags:
