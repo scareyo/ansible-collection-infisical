@@ -5,7 +5,7 @@ __metaclass__ = type
 DOCUMENTATION = r"""
   name: infisical
   author: Sam Carey <sam@scarey.me>
-  version_added: "1.0.0"  # for collections, use the collection version, not the Ansible version
+  version_added: "0.1.0"
   short_description: Lookup secrets from Infisical
   description:
       - This lookup returns a value from an Infisical key
