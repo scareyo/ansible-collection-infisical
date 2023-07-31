@@ -9,7 +9,7 @@ pip install infisical --user
 ```
 
 ```
-ansible galaxy collection install scareyo.infisical
+ansible-galaxy collection install scareyo.infisical
 ```
 
 ## Environment variables
