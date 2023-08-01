@@ -14,7 +14,9 @@ ansible-galaxy collection install scareyo.infisical
 
 ## Environment variables
 
-```INFISICAL_SERVICE_TOKEN```: Infisical service token for your project
+`INFISICAL_SERVICE_TOKEN`: Infisical service token for your project
+
+`INFISICAL_ENVIRONMENT`: Infisical environment (e.g. dev, staging, prod)
 
 ## Usage
 

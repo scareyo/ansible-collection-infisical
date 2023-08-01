@@ -35,8 +35,10 @@ class LookupModule(LookupBase):
 
         ret = []
 
+        infisical_env = os.environ['INFISICAL_ENVIRONMENT']
+
         for term in terms:
-            secret = client.get_secret(term)
+            secret = client.get_secret(term, environment=infisical_env)
             ret.append(secret.secret_value)
 
         return ret
