@@ -13,6 +13,16 @@ DOCUMENTATION = r"""
     _terms:
       description: key(s) to retreive value from
       required: True
+    env:
+      type: str
+      description:
+        - The slug name of the environment from where secrets should be fetched from
+      default: 'dev'
+    path:
+      type: str
+      description:
+        - The path from where secrets should be fetched from
+      default: '/'
 """
 
 import os
@@ -28,17 +38,20 @@ client = InfisicalClient(token=os.environ['INFISICAL_SERVICE_TOKEN'])
 
 class LookupModule(LookupBase):
 
-    def run(self, terms, variables=None, **kwargs):
+    def run(self, terms, variables, **kwargs):
 
         if not terms:
             raise AnsibleError("No keys specified")
 
         ret = []
 
-        infisical_env = os.environ['INFISICAL_ENVIRONMENT']
+        self.set_options(var_options=variables, direct=kwargs)
+
+        infisical_env = self.get_option("env")
+        infisical_path = self.get_option("path")
 
         for term in terms:
-            secret = client.get_secret(term, environment=infisical_env)
+            secret = client.get_secret(term, environment=infisical_env, path=infisical_path)
             ret.append(secret.secret_value)
 
         return ret
